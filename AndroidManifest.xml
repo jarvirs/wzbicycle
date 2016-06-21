@@ -44,6 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.wzbicycle.controller.UserInfoActivity"></activity>
         
         <service
             android:name="com.baidu.location.f"

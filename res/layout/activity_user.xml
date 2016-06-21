@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/RiceColor" >
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:background="#ffffff" >
+
+    </ListView>
 
     <Button
         android:id="@+id/button1"
@@ -9,9 +21,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:textColor="#ffffff"
+        android:layout_marginTop="27dp"
         android:background="@drawable/loginbtn"
-        android:text="登录/注册" />
+        android:text="登录/注册"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="TextView" />
 
 </RelativeLayout>
