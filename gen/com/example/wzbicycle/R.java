@@ -8,6 +8,14 @@
 package com.example.wzbicycle;
 
 public final class R {
+    public static final class anim {
+        public static final int zoomin=0x7f040000;
+        public static final int zoomout=0x7f040001;
+    }
+    public static final class array {
+        public static final int spingarr_availborrowed=0x7f080001;
+        public static final int spingarr_searchrange=0x7f080000;
+    }
     public static final class attr {
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
@@ -23,12 +31,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int loadingTextAppearance=0x7f010001;
     }
     public static final class color {
-        public static final int circle=0x7f050001;
-        public static final int dialog_bg=0x7f050005;
-        public static final int rect=0x7f050002;
-        public static final int shadow=0x7f050004;
-        public static final int triangle=0x7f050000;
-        public static final int view_bg=0x7f050003;
+        public static final int Blue=0x7f050000;
+        public static final int RiceColor=0x7f050002;
+        public static final int UserBg=0x7f050001;
+        public static final int circle=0x7f050004;
+        public static final int dialog_bg=0x7f050008;
+        public static final int rect=0x7f050005;
+        public static final int shadow=0x7f050007;
+        public static final int triangle=0x7f050003;
+        public static final int view_bg=0x7f050006;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -37,44 +48,72 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int aa_dialog_bg=0x7f020000;
         public static final int ic_launcher=0x7f020001;
-        public static final int location_logo=0x7f020002;
-        public static final int location_logo1=0x7f020003;
-        public static final int location_logo2=0x7f020004;
-        public static final int marker=0x7f020005;
-        public static final int popup=0x7f020006;
-        public static final int popup_down=0x7f020007;
-        public static final int shadow=0x7f020008;
-        public static final int shape=0x7f020009;
-        public static final int unlogin=0x7f02000a;
+        public static final int loading_after=0x7f020002;
+        public static final int loading_pre=0x7f020003;
+        public static final int location_logo=0x7f020004;
+        public static final int location_logo1=0x7f020005;
+        public static final int location_logo2=0x7f020006;
+        public static final int loginbtn=0x7f020007;
+        public static final int marker=0x7f020008;
+        public static final int offlineload=0x7f020009;
+        public static final int pic0=0x7f02000a;
+        public static final int pic1=0x7f02000b;
+        public static final int popup=0x7f02000c;
+        public static final int popup_down=0x7f02000d;
+        public static final int searchbtn=0x7f02000e;
+        public static final int shadow=0x7f02000f;
+        public static final int shape=0x7f020010;
+        public static final int unlogin=0x7f020011;
     }
     public static final class id {
-        public static final int action_settings=0x7f090007;
-        public static final int bmapView=0x7f090000;
-        public static final int editText1=0x7f090002;
-        public static final int imageView1=0x7f090001;
-        public static final int indication=0x7f090004;
-        public static final int loadView=0x7f090003;
-        public static final int promptTV=0x7f090005;
-        public static final int shapeLoadingView=0x7f090006;
+        public static final int action_settings=0x7f0b0018;
+        public static final int bmapView=0x7f0b0000;
+        public static final int button1=0x7f0b0004;
+        public static final int checkBox1=0x7f0b0005;
+        public static final int checkBox2=0x7f0b0006;
+        public static final int content=0x7f0b000b;
+        public static final int editText1=0x7f0b0003;
+        public static final int imageView1=0x7f0b0002;
+        public static final int imageView2=0x7f0b0007;
+        public static final int indication=0x7f0b0015;
+        public static final int linearLayout1=0x7f0b0001;
+        public static final int listView1=0x7f0b0008;
+        public static final int loadView=0x7f0b0014;
+        public static final int message=0x7f0b0011;
+        public static final int negativeButton=0x7f0b0013;
+        public static final int positiveButton=0x7f0b0012;
+        public static final int promptTV=0x7f0b0016;
+        public static final int shapeLoadingView=0x7f0b0017;
+        public static final int spinner1=0x7f0b000c;
+        public static final int spinner2=0x7f0b000e;
+        public static final int spinner3=0x7f0b0010;
+        public static final int textView1=0x7f0b0009;
+        public static final int textView2=0x7f0b000d;
+        public static final int textView3=0x7f0b000f;
+        public static final int title=0x7f0b000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int layout_dialog=0x7f030001;
-        public static final int load_view=0x7f030002;
+        public static final int activity_user=0x7f030001;
+        public static final int dialog_normal_layout=0x7f030002;
+        public static final int layout_dialog=0x7f030003;
+        public static final int load_view=0x7f030004;
+        public static final int userlist=0x7f030005;
+        public static final int zoomin=0x7f030006;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f0a0000;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060002;
+        public static final int action_settings=0x7f070001;
+        public static final int app_name=0x7f070000;
+        public static final int hello_world=0x7f070002;
     }
     public static final class style {
         /** 
@@ -98,12 +137,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int custom_dialog=0x7f070002;
+        public static final int AppTheme=0x7f090001;
+        public static final int Dialog=0x7f090009;
+        public static final int custom_dialog=0x7f090002;
+        public static final int sdw_79351b=0x7f090006;
+        public static final int sdw_white=0x7f090005;
+        public static final int text_15_666666_sdw=0x7f090008;
+        public static final int text_15_ffffff_sdw=0x7f090007;
+        public static final int text_16_666666=0x7f090004;
+        public static final int text_18_ffffff=0x7f090003;
     }
     public static final class styleable {
         /** Attributes that can be used with a LoadingView.
