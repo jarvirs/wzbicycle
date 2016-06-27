@@ -1,5 +1,7 @@
 package com.wzbicycle.model;
 
+import android.R.integer;
+
 
 //全局常量定义累
 public class Constant {
@@ -13,4 +15,6 @@ public class Constant {
 	
 	public static final int SEARCH_RANGE[] = new int[]{500,1500,2000,5000};	//查找范围
 	public static final int AVAIL_BORROWED[] = new int[]{1,15,30,-1};	//可借数量设置范围
+	
+	public static final int MSG_UPDATE_LOADINGIMAGE = 0;				//更新加载组件
 }
