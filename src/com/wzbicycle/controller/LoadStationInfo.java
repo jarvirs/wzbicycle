@@ -116,6 +116,10 @@ public class LoadStationInfo extends Thread{
 						if(activity.isPriorityPos(station)){
 							activity.loadStation(station);	
 						}
+						
+						//防止由于网络问题导致某些节点解析出错
+						if((i > 2001) && (activity.tag[i - 1] == 0))
+							i --;
 					}
             	}
             	else if(loadPart == 2 && !activity.loadCompleted1){						//鹿城区
@@ -135,6 +139,9 @@ public class LoadStationInfo extends Thread{
 						if(activity.isPriorityPos(station)){
 							activity.loadStation(station);
 						}
+						//防止由于网络问题导致某些节点解析出错
+						if((i > 1) && (activity.tag[i - 1] == 0))
+							i --;
 						
 					}
             		
@@ -154,7 +161,9 @@ public class LoadStationInfo extends Thread{
 						if(activity.isPriorityPos(station)){
 							activity.loadStation(station);
 						}
-					
+						//防止由于网络问题导致某些节点解析出错
+						if((i > 3001) && (activity.tag[i - 1] == 0))
+							i --;
 					}
 					//3个特殊点,888,1000,1001,6666
 					int special[] = {888,1000,1001,6666};

@@ -30,7 +30,6 @@ import com.baidu.mapapi.map.offline.MKOfflineMapListener;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.utils.SpatialRelationUtil;
 import com.example.wzbicycle.R;
-import com.wzbicycle.component.ShapeLoadingDialog;
 import com.wzbicycle.model.BicycleStation;
 import com.wzbicycle.model.Constant;
 import com.wzbicycle.model.DataOperator;
@@ -39,6 +38,8 @@ import com.wzbicycle.model.UserData;
 import android.R.color;
 import android.R.integer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -51,6 +52,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -61,6 +63,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -106,6 +110,31 @@ public class MainActivity extends Activity{
 	int loadedTag[];										//已经加载过的点
 	int tag[];												//避免重复添加,提高效率
 	
+	private Handler handler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			
+			switch (msg.what) {
+			case Constant.MSG_UPDATE_LOADINGIMAGE:
+				btn_search.setEnabled(true);
+				btn_search.setClickable(true);
+				
+				ViewGroup viewGroup = (ViewGroup)findViewById(R.id.relativelayout1);
+				viewGroup.removeView(loadingView);
+								
+				break;
+
+			default:
+				break;
+			}
+			
+			super.handleMessage(msg);
+		}
+    	
+    };
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,7 +160,8 @@ public class MainActivity extends Activity{
     	loadingView = (ImageView)findViewById(R.id.imageView2);
     	
     	AlphaAnimation anima = new AlphaAnimation(0.3f, 1.0f);  
-        anima.setDuration(30000);								// 设置动画显示时间
+        anima.setDuration(3000);								// 设置动画显示时间
+        anima.setRepeatCount(6);
         loadingView.startAnimation(anima);  
         anima.setAnimationListener(new AnimationImpl());  
     	
@@ -198,6 +228,7 @@ public class MainActivity extends Activity{
 				}
 			}
 		});
+        //查询按钮
         btn_search.setOnClickListener(new Button.OnClickListener() {
 			
 			@Override
@@ -463,6 +494,10 @@ public class MainActivity extends Activity{
 					if(!loadedAll && loadCompleted1 && loadCompleted2 && loadCompleted3){
 						stations_op = stations;
 						loadedAll = true;
+						
+						Message msg = new Message();
+						msg.what = Constant.MSG_UPDATE_LOADINGIMAGE;
+						handler.sendMessage(msg);
 					}
 				}
 			}
@@ -566,6 +601,6 @@ public class MainActivity extends Activity{
     }  
   
     private void skip() {  
-    	loadingView.setVisibility(View.GONE);
+    	
     }  
 }
